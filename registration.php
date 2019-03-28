@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="CSS/index.css">
+<link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+<title>KOH Message board</title>
+</head>
+<body>
+  <div id="header">
+    <h1>KOH Message Board</h1>
+  </div>
+
+<div id="container">
+  <form action="action_page.php">
+  <div class="container">
+    <label for="uname"><b>Create Username</b></label>
+    <input type="text" placeholder="Enter a Username" name="uname" required>
+    <br>
+    <br>
+    <label for="psw"><b>Create Password</b></label>
+    <input type="password" placeholder="Enter a Password" name="psw" required>
+    <br>
+    <br>
+    <label for="psw"><b>Insert Email address</b></label>
+    <input type="password" placeholder="Enter a valid Gmail account" name="psw" required>
+
+    <button type="submit">Register</button>
+    <a href="index.php">Log In Existing Account</a>
+    </form>
+</div>
+
+</body>
+</html>

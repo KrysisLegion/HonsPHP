@@ -1,0 +1,120 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: #28666E;
+}
+
+#header{
+  font-family: 'Patua One', cursive;
+  font-size: 100%;
+  letter-spacing: 1px;
+  padding: 5px;
+  padding-left: 15px;
+  background-color: #033F63;
+  color: #FEDC97;
+
+}
+
+#container{
+    margin-top: 50px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+    font-size: 100%;
+    padding: 5px;
+    padding-left: 15px;
+    color: #FEDC97;
+
+}
+
+/* Bordered form */
+form {
+  margin-top: 5px;
+  border: 3px solid #f1f1f1;
+  border-radius: 10px;
+  width: 30%;
+  margin: 0 auto;
+  background-color: #033F63;
+}
+
+#container form {
+  margin-top: 5px;
+  border: 3px solid #f1f1f1;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #033F63;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  min-height: 500px;
+  max-height: 500px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #013656;
+  color: #FEDC97;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 1px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.2;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+a {
+  color: White;
+}
