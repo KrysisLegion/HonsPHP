@@ -14,7 +14,7 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 
 //open connection to database
 function checkUser(){
-  $dbhost = getenv("MYSQL_SERVICE_HOST");
+  $dbhost = "localhost";
   $dbport = getenv("MYSQL_SERVICE_PORT");
   $dbuser = getenv("MYSQL_SERVICE_USERNAME");
   $dbpwd = getenv("MYSQL_SERVICE_PASSWORD");
