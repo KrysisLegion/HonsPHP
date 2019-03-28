@@ -18,12 +18,9 @@
     <br>
     <br>
     <label for="psw"><b>Create Password</b></label>
-    <input type="password" placeholder="Enter a Password" name="psw" required>
+    <input type="password" placeholder="Enter a Password" name="pword" required>
     <br>
     <br>
-    <label for="psw"><b>Insert Email address</b></label>
-    <input type="password" placeholder="Enter a valid Gmail account" name="psw" required>
-
     <button type="submit">Register</button>
     <a href="index.php">Log In Existing Account</a>
     </form>
