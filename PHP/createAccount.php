@@ -16,8 +16,8 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 function checkUser(){
   $dbhost = getenv("MYSQL_SERVICE_HOST");
   $dbport = getenv("MYSQL_SERVICE_PORT");
-  $dbuser = "korour";
-  $dbpwd = "password";
+  $dbuser = getenv("MYSQL_SERVICE_USERNAME");
+  $dbpwd = getenv("MYSQL_SERVICE_PASSWORD");
   $dbname = getenv("dbname");
 
   $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
