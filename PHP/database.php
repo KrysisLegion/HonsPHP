@@ -1,10 +1,6 @@
 <?php
 //open connection to database
 
-
-
-
-
 function CreateAccount(){
   $dbhost = getenv("MYSQL_SERVICE_HOST");
   $dbport = getenv("MYSQL_SERVICE_PORT");
@@ -24,10 +20,5 @@ function CreateAccount(){
       error_log($e->getMessage());
       exit('Database connection error has occured');
     }
-}
-
-function CheckLogin(){
-
-
 }
  ?>
