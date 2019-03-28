@@ -24,17 +24,6 @@ function CreateAccount(){
       error_log($e->getMessage());
       exit('Database connection error has occured');
     }
-
-    // this checks if the user trying to register already exists in the database
-    $stmt = $pdo->prepare("SELECT * FROM accs WHERE usr = ?");
-    $stmt->execute([$uname]);
-    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $stmt = null;
-    if(!$arr){
-      return false;
-    }else{
-      return true;
-    }
 }
 
 function CheckLogin(){
