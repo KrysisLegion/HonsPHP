@@ -5,7 +5,7 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
   $uname = strip_tags($_POST['uname']);
   $password = strip_tags($_POST['pword']);
   if (checkUser($uname)){
-    header("Location: /create.php?err=1");
+    header("Location: /registration.php?err=1");
   }else{
     register($uname, $password);
     header("Location: /messageBoard.php");
@@ -61,7 +61,7 @@ function register($uname, $pwd){
       PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ];
     try {
-      $pdo = new PDO($dsn, "chairuvu_Kris", "[%&1Ma]brXKB", $options);
+      $pdo = new PDO($dsn, $dbname, $dbpwd, $options);
     } catch (Exception $e) {
       error_log($e->getMessage());
       exit('Database connection error has occured');
