@@ -11,7 +11,7 @@
   </div>
 
 <div id="container">
-  <form action="createAccount.php">
+  <form action="/PHP/createAccount.php">
   <div class="container">
     <label for="uname"><b>Create Username</b></label>
     <input type="text" placeholder="Enter a Username" name="uname" required>
