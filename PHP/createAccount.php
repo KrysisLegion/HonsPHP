@@ -15,7 +15,7 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 //open connection to database
 function checkUser(){
 
-$dbhost = getenv("MYSQL_SERVICE_HOST");
+$dbhost = getenv("localhost");
 $dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("dbuser");
 $dbpwd = getenv("dbpassword");
@@ -33,7 +33,7 @@ $connection->close();
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
-  $dbhost = getenv("MYSQL_SERVICE_HOST");
+  $dbhost = getenv("localhost");
   $dbport = getenv("MYSQL_SERVICE_PORT");
   $dbuser = getenv("dbuser");
   $dbpwd = getenv("dbpassword");
