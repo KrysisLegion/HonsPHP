@@ -21,7 +21,7 @@ $dbuser = getenv("root");
 $dbpwd = getenv("MYSQL_ROOT_PASSWORD");
 $dbname = getenv("dbname");
 
-  $connection = mysql_connect($dbhost, $dbuser, $dbpwd, $dbname);
+  $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
   if (!$connection) {
       printf("Connect failed:");
   } else {
