@@ -33,6 +33,7 @@ $dbname = getenv("dbname");
     echo $row['user_id']." ".$row['username']."\n";
   }
   mysql_close();
+}
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
