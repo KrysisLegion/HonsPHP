@@ -13,23 +13,23 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 }
 
 //open connection to database
-// function checkUser(){
-//
-// $dbhost = getenv("MYSQL_SERVICE_HOST");
-// $dbport = getenv("MYSQL_SERVICE_PORT");
-// $dbuser = getenv("dbuser");
-// $dbpwd = getenv("dbpassword");
-// $dbname = getenv("dbname");
-// $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-// if ($connection->connect_errno) {
-//     printf("Connect failed: %s\n", $mysqli->connect_error);
-//     exit();
-// } else {
-//     printf("Connected to the database");
-// }
-// $connection->close();
-//
-// }
+function checkUser(){
+
+$dbhost = getenv("MYSQL_SERVICE_HOST");
+$dbport = getenv("MYSQL_SERVICE_PORT");
+$dbuser = getenv("dbuser");
+$dbpwd = getenv("dbpassword");
+$dbname = getenv("dbname");
+$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+if ($connection->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+} else {
+    printf("Connected to the database");
+}
+$connection->close();
+
+}
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
