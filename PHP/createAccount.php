@@ -13,67 +13,48 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 }
 
 //open connection to database
-function checkUser(){
-  $dbhost = "127.0.0.1";
-  $dbport = "3306";
-  $dbuser = getenv("MYSQL_SERVICE_USERNAME");
-  $dbpwd = getenv("MYSQL_SERVICE_PASSWORD");
-  $dbname = getenv("dbname");
-
-  $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
-    $options = [
-      PDO::ATTR_EMULATE_PREPARES   => false,
-      PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ];
-    try {
-      $pdo = new PDO($dsn, $dbuser, $dbpwd, $options);
-    } catch (Exception $e) {
-      error_log($e->getMessage());
-      exit('Database connection error has occured');
-    }
-
-    // this checks if the user trying to register already exists in the database
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$uname]);
-    $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $stmt = null;
-    if(!$arr){
-      return false;
-    }else{
-      return true;
-    }
-
-}
+// function checkUser(){
+//
+// $dbhost = getenv("MYSQL_SERVICE_HOST");
+// $dbport = getenv("MYSQL_SERVICE_PORT");
+// $dbuser = getenv("dbuser");
+// $dbpwd = getenv("dbpassword");
+// $dbname = getenv("dbname");
+// $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+// if ($connection->connect_errno) {
+//     printf("Connect failed: %s\n", $mysqli->connect_error);
+//     exit();
+// } else {
+//     printf("Connected to the database");
+// }
+// $connection->close();
+//
+// }
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
   $dbhost = getenv("MYSQL_SERVICE_HOST");
   $dbport = getenv("MYSQL_SERVICE_PORT");
   $dbuser = getenv("dbuser");
-  $dbpwd = getenv("dbpwd");
+  $dbpwd = getenv("dbpassword");
   $dbname = getenv("dbname");
+  $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+  if ($connection->connect_errno) {
+      printf("Connect failed: %s\n", $mysqli->connect_error);
+      exit();
+  } else {
+      printf("Connected to the database");
+  }
+  $connection->close();
 
-  $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
-    $options = [
-      PDO::ATTR_EMULATE_PREPARES   => false,
-      PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ];
-    try {
-      $pdo = new PDO($dsn, $dbname, $dbpwd, $options);
-    } catch (Exception $e) {
-      error_log($e->getMessage());
-      exit('Database connection error has occured');
-    }
-    $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+  $sql = "INSERT INTO MyGuests (username, password)
+  VALUES ($uname, $password)";
 
-    $options = [
-        'cost' => 12,
-    ];
-
-    $stmt->execute([$uname, password_hash($pwd, PASSWORD_BCRYPT, $options)]);
-    $_SESSION['uname'] = $uname;
+  if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+  } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+  }
 }
 
  ?>
