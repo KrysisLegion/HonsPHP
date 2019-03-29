@@ -17,7 +17,7 @@ function checkUser($uname){
 
 $dbhost = getenv("MYSQL_SERVICE_SERVICE_HOST");
 $dbport = getenv("MYSQL_SERVICE_SERVICE_PORT");
-$dbuser = getenv("root");
+$dbuser = getenv("dbuser");
 $dbpwd = getenv("MYSQL_ROOT_PASSWORD");
 $dbname = getenv("dbname");
 
@@ -50,7 +50,7 @@ $dsn = "mysql:host=".$dbhost.":".$dbport.";dbname=".$dbname.";charset=utf8mb4";
 function register($uname, $pwd){
   $dbhost = getenv("MYSQL_SERVICE_SERVICE_HOST");
   $dbport = getenv("MYSQL_SERVICE_SERVICE_PORT");
-  $dbuser = getenv("root");
+  $dbuser = getenv("dbuser");
   $dbpwd = getenv("MYSQL_ROOT_PASSWORD");
   $dbname = getenv("dbname");
 
