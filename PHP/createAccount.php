@@ -47,13 +47,13 @@ function register($uname, $pwd){
   }
   $connection->close();
 
-  $sql = "INSERT INTO MyGuests (username, password)
+  $sql = "INSERT INTO users (username, password)
   VALUES ($uname, $password)";
 
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
   } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+      echo "Error nooties: " . $sql . "<br>" . $conn->error;
   }
 }
 
