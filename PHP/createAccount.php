@@ -15,11 +15,11 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 //open connection to database
 function checkUser(){
 
-$dbhost = getenv("localhost");
-$dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("dbuser");
-$dbpwd = getenv("dbpassword");
-$dbname = getenv("dbname");
+$dbhost = getenv("MYSQL_SERVICE_SERVICE_HOST");
+$dbport = getenv("MYSQL_SERVICE_SERVICE_PORT");
+$dbuser = getenv("root");
+$dbpwd = getenv("MYSQL_ROOT_PASSWORD");
+$dbname = getenv("MYSQL_DATABASE");
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
