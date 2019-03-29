@@ -20,6 +20,7 @@ $dbport = getenv("MYSQL_SERVICE_SERVICE_PORT");
 $dbuser = getenv("root");
 $dbpwd = getenv("MYSQL_ROOT_PASSWORD");
 $dbname = getenv("dbname");
+
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -38,23 +39,28 @@ function register($uname, $pwd){
   $dbuser = getenv("dbuser");
   $dbpwd = getenv("dbpassword");
   $dbname = getenv("dbname");
-  $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-  if ($connection->connect_errno) {
-      printf("Connect failed: %s\n", $mysqli->connect_error);
-      exit();
+
+  $connection = mysql_connect($dbhost, $dbuser, $dbpwd, $dbname);
+  if (!$connection) {
+      printf("Connect failed:");
   } else {
       printf("Connected to the database");
   }
-  $connection->close();
 
-  $sql = "INSERT INTO users (username, password)
-  VALUES ($uname, $password)";
-
-  if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
-  } else {
-      echo "Error nooties: " . $sql . "<br>" . $conn->error;
+  $dbconnection = mysql_query($query);
+  while ($row = mysql_fetch_assoc($rs)){
+    echo $row['user_id']." ".$row['username']."\n";
   }
+  mysql_close();
+  //
+  // $sql = "INSERT INTO users (username, password)
+  // VALUES ($uname, $password)";
+  //
+  // if ($conn->query($sql) === TRUE) {
+  //     echo "New record created successfully";
+  // } else {
+  //     echo "Error nooties: " . $sql . "<br>" . $conn->error;
+  // }
 }
 
  ?>
