@@ -1,11 +1,5 @@
 <?php
 
-$dbhost = getenv("MYSQL_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("dbuser");
-$dbpwd = getenv("dbpassword");
-$dbname = getenv("dbname");
-$dsn = "mysql:host=mysql://mysql:3306/;dbname=".$dbname.";charset=utf8mb4";
 
 if(isset($_POST['uname']) && isset($_POST['pword'])){
 
@@ -21,6 +15,12 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 
 //open connection to database
 function checkUser($uname){
+  $dbhost = getenv("MYSQL_SERVICE_HOST");
+  $dbport = getenv("MYSQL_SERVICE_PORT");
+  $dbuser = getenv("dbuser");
+  $dbpwd = getenv("dbpassword");
+  $dbname = getenv("dbname");
+  $dsn = "mysql:host=mysql://mysql:3306/;dbname=".$dbname.";charset=utf8mb4";
     $options = [
       PDO::ATTR_EMULATE_PREPARES   => false,
       PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -47,6 +47,12 @@ function checkUser($uname){
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
+  $dbhost = getenv("MYSQL_SERVICE_HOST");
+  $dbport = getenv("MYSQL_SERVICE_PORT");
+  $dbuser = getenv("dbuser");
+  $dbpwd = getenv("dbpassword");
+  $dbname = getenv("dbname");
+  $dsn = "mysql:host=mysql://mysql:3306/;dbname=".$dbname.";charset=utf8mb4";
       $options = [
         PDO::ATTR_EMULATE_PREPARES   => false,
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

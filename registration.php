@@ -24,7 +24,7 @@
     <button type="submit">Register</button>
     <a href="index.php">Log In Existing Account</a>
   </div>
-    </form>
+  </form>
 </div>
 
 </body>
