@@ -3,8 +3,9 @@
 $dbhost = getenv("MYSQL_SERVICE_HOST");
 $dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("dbuser");
-$dbpwd = getenv("dbpwd");
+$dbpwd = getenv("dbpassword");
 $dbname = getenv("dbname");
+$dsn = "mysql:host=mysql://mysql:3306/;dbname=".$dbname.";charset=utf8mb4";
 
 if(isset($_POST['uname']) && isset($_POST['pword'])){
 
@@ -20,7 +21,6 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 
 //open connection to database
 function checkUser($uname){
-$dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
     $options = [
       PDO::ATTR_EMULATE_PREPARES   => false,
       PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -47,8 +47,6 @@ $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
-
-  $dsn = "mysql:host=".$dbhost.":".$dbport.";dbname=".$dbname.";charset=utf8mb4";
       $options = [
         PDO::ATTR_EMULATE_PREPARES   => false,
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -61,7 +59,7 @@ function register($uname, $pwd){
         exit('Database connection error has occured');
       }
 
-      $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
 
     $options = [
         'cost' => 12,

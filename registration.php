@@ -12,12 +12,11 @@
 
 <div id="container">
   <form method="POST" action="/PHP/createAccount.php">
-  <div class="container">
     <label for="uname"><b>Create Username</b></label>
     <input type="text" placeholder="Enter a Username" name="uname" required>
     <br>
     <br>
-    <label for="psw"><b>Create Password</b></label>
+    <label for="pword"><b>Create Password</b></label>
     <input type="password" placeholder="Enter a Password" name="pword" required>
     <br>
     <br>
