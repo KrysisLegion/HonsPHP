@@ -23,7 +23,8 @@
       <button type="submit">Login</button>
 
       <a href="registration.php">Register An Account</a>
-      </form>
+    </div>
+    </form>
   </div>
 
 </body>
