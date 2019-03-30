@@ -1,9 +1,9 @@
 <?php
 
-$dbhost = getenv("MYSQL_SERVICE_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_SERVICE_PORT");
+$dbhost = getenv("MYSQL_SERVICE_HOST");
+$dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("dbuser");
-$dbpwd = getenv("MYSQL_ROOT_PASSWORD");
+$dbpwd = getenv("dbpwd");
 $dbname = getenv("dbname");
 
 if(isset($_POST['uname']) && isset($_POST['pword'])){
@@ -20,7 +20,6 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
 
 //open connection to database
 function checkUser($uname){
-
 $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
     $options = [
       PDO::ATTR_EMULATE_PREPARES   => false,
