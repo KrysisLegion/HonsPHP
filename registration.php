@@ -12,6 +12,7 @@
 
 <div id="container">
   <form method="POST" action="/PHP/createAccount.php">
+  <div class="container">
     <label for="uname"><b>Create Username</b></label>
     <input type="text" placeholder="Enter a Username" name="uname" required>
     <br>
@@ -22,6 +23,7 @@
     <br>
     <button type="submit">Register</button>
     <a href="index.php">Log In Existing Account</a>
+  </div>
     </form>
 </div>
 
