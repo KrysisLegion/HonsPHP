@@ -20,7 +20,7 @@ function checkUser($uname){
   $dbuser = getenv("dbuser");
   $dbpwd = getenv("dbpassword");
   $dbname = getenv("dbname");
-  $dsn = "mysql:host=mysql://mysql:3306/;dbname=".$dbname.";charset=utf8mb4";
+  $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
     $options = [
       PDO::ATTR_EMULATE_PREPARES   => false,
       PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -52,7 +52,7 @@ function register($uname, $pwd){
   $dbuser = getenv("dbuser");
   $dbpwd = getenv("dbpassword");
   $dbname = getenv("dbname");
-  $dsn = "mysql:host=mysql://mysql:3306/;dbname=".$dbname.";charset=utf8mb4";
+  $dsn = "mysql:host=".$dbhost.";dbname=".$dbname.";charset=utf8mb4";
       $options = [
         PDO::ATTR_EMULATE_PREPARES   => false,
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
