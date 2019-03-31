@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 if(isset($_POST['uname']) && isset($_POST['pword'])){
 
@@ -46,7 +46,7 @@ function checkUser($uname){
 }
 
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
-function register($uname, $pwd){
+function register($uname, $password){
   $dbhost = getenv("MYSQL_SERVICE_HOST");
   $dbport = getenv("MYSQL_SERVICE_PORT");
   $dbuser = getenv("dbuser");
@@ -66,13 +66,11 @@ function register($uname, $pwd){
       }
 
     $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-
     $options = [
         'cost' => 12,
     ];
-
-    $stmt->execute([$uname, password_hash($pwd, PASSWORD_BCRYPT, $options)]);
-    $_SESSION['usr'] = $uname;
+    $stmt->execute([$uname, password_hash($password, PASSWORD_BCRYPT, $options)]);
+    $_SESSION['uname'] = $uname;
 }
 
  ?>
