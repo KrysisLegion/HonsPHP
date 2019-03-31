@@ -10,7 +10,6 @@ if(isset($_POST['uname']) && isset($_POST['pword'])){
     header("Location: /index.php?err=1");
   }
 }
-
 //This inserts the created account into the database and hashes the password so it cannot be read if the database is breached
 function register($uname, $pwd){
   $dbhost = getenv("MYSQL_SERVICE_HOST");
