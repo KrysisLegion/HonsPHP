@@ -11,7 +11,7 @@
   </div>
 
   <div id="container">
-    <form action="action_page.php">
+    <form action="/PHP/loginController.php">
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input id="usr" type="text" placeholder="Enter Username" name="uname" required>
