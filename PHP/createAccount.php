@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     exit();
   }
     //check input characters are valid
-    if(!preg_match("/^[a-zA-Z]*$/", $username) || !preg_match("/^[a-zA-Z]*$/", $password)){
+  if(!preg_match("/^[a-zA-Z]*$/", $username) || !preg_match("/^[a-zA-Z]*$/", $password)){
     header("Location: ../registration.php?regestration=invalid");
     exit();
   } else {
@@ -31,9 +31,6 @@ if(isset($_POST['submit'])){
       mysqli_query($connection, $sql);
       header("Location: ../regestration.php?regestration=success");
     }
-  }
-
-
 } else {
   header("Location: ../index.php");
   exit();
