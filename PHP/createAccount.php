@@ -10,16 +10,17 @@ if(isset($_POST['submit'])){
   if(empty($username) || empty($password)){
     header("Location: ../registration.php?regestration=empty")
     exit();
-  }
+  } else {
     //check input characters are valid
   if(!preg_match("/^[a-zA-Z]*$/", $username) || !preg_match("/^[a-zA-Z]*$/", $password)){
     header("Location: ../registration.php?regestration=invalid");
     exit();
-  } else {
+    } else {
     $sql = "SELECT * FROM users WHERE username='$username'";
     $result = mysqli_query($connection, $spl);
     $resultCheck = mysqli_num_rows();
-  }
+    }
+
     if($resultCheck > 0){
       header("Location: ../regestration.php?regestration=usertaken");
       exit();
@@ -31,6 +32,7 @@ if(isset($_POST['submit'])){
       mysqli_query($connection, $sql);
       header("Location: ../regestration.php?regestration=success");
     }
+  }
 } else {
   header("Location: ../index.php");
   exit();
