@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['uname'])){
+  header("Location: /ssd/codePaste.php");
+}
+?>
+
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
@@ -11,8 +18,8 @@
   </div>
 
   <div id="container">
-    <form action="/PHP/loginController.php">
     <div class="container">
+      <form action="/PHP/loginController.php" method="POST">
       <label for="uname"><b>Username</b></label>
       <input id="usr" type="text" placeholder="Enter Username" name="uname" required>
       <br>

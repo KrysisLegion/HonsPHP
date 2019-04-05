@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
@@ -11,8 +13,8 @@
   </div>
 
 <div id="container">
-  <form method="POST" action="/PHP/createAccount.php">
   <div class="container">
+    <form method="POST" action="/PHP/createAccount.php">
     <label for="uname"><b>Create Username</b></label>
     <input type="text" placeholder="Enter a Username" name="uname" required>
     <br>
