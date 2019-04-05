@@ -18,8 +18,8 @@ if(isset($_SESSION['uname'])){
   </div>
 
   <div id="container">
+    <form action="/PHP/loginController.php" method="POST">
     <div class="container">
-      <form action="/PHP/loginController.php" method="POST">
       <label for="uname"><b>Username</b></label>
       <input id="usr" type="text" placeholder="Enter Username" name="uname" required>
       <br>
