@@ -1,7 +1,8 @@
 <?php
 session_start();
-if(isset($_SESSION['uname'])){
-  header("Location: /ssd/codePaste.php");
+if(isset($_SESSION['userID'])){
+  header("Location: messageBoard.php?logged-in");
+  exit();
 }
 ?>
 
@@ -10,24 +11,23 @@ if(isset($_SESSION['uname'])){
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
 <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-<title>KOH Message board</title>
+<title>KOH Login</title>
 </head>
 <body>
   <div id="header">
-    <h1>KOH Message Board</h1>
+    <h1>KOH Login</h1>
   </div>
 
   <div id="container">
-    <form action="/PHP/loginController.php" method="POST">
+    <form action="PHP/login.php" method="post">
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input id="usr" type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username..." name="inputUsername" required>
       <br>
       <br>
       <label for="psw"><b>Password</b></label>
-      <input id="pswd" type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
+      <input type="password" placeholder="Enter Password..." name="inputPassword" required>
+      <button type="submit" name="submit">Login</button>
 
       <a href="registration.php">Register An Account</a>
     </div>
