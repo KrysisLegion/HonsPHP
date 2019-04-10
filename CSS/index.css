@@ -61,8 +61,20 @@ textarea {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  min-height: 500px;
-  max-height: 500px;
+  min-height: 75px;
+  max-height: 75px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#largeText textarea {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  min-height: 200px;
+  max-height: 200px;
   max-width: 100%;
   min-width: 100%;
 }

@@ -45,14 +45,11 @@ if (isset($_POST['submit'])){
             exit();
         }
         else{
-
           $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
-
           mysqli_stmt_bind_param($stmt, "ss", $username, $hashedpassword);
           mysqli_stmt_execute($stmt);
           header("Location: ../registration.php?signup=success");
           exit();
-
         }
       }
 

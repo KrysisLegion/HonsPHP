@@ -15,30 +15,47 @@ html,body{
 
 }
 
-#navbar{
-  font-family: 'Patua One', cursive;
-  font-size: 100%;
-  letter-spacing: 1px;
-  padding: 5px;
-  padding-left: 15px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: #033F63;
-  color: #FEDC97;
-
 }
 
-#logout button {
-  background-color: #013656;
+li {
+  float: left;
+  display: block;
+}
+
+li a {
+  display: block;
+  color: #FEDC97;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 1px;
+}
+
+li a:hover{
+  opacity: 0.2;
+}
+
+button {
+  background-color: #033F63;
   color: #FEDC97;
   font-family: 'Fredoka One', cursive;
+  float: right;
   letter-spacing: 1px;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  width: 100%;
 }
 
-#logout button:hover {
+/* Add a hover effect for buttons */
+button:hover {
   opacity: 0.2;
 }

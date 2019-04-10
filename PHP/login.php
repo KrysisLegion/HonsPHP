@@ -36,7 +36,7 @@ $password = $_POST['inputPassword'];
           $_SESSION['userID'] = $row['user_id'];
           $_SESSION['username'] = $row['username'];
 
-          header("Location: ../messageBoard.php?login-success");
+          header("Location: ../topics.php?login-success");
           exit();
 
         }

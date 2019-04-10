@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if(isset($_SESSION['user_id'])){
-    header("Location: messageBoard.php");
+  if(isset($_SESSION['userID'])){
+    header("Location: topics.php?logged-in");
     exit();
   }
 ?>
