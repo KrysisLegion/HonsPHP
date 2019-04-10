@@ -1,13 +1,13 @@
 <?php
 $servhost = getenv("MYSQL_SERVICE_HOST");
-$dbuser = getenv("dbuser");
-$dbpassword = getenv("dbpassword");
+$dbUsername = getenv("dbuser");
+$dbPassword = getenv("dbpassword");
 $dbName = getenv("dbname");
 
 //
 // $servhost = "localhost";
-// $dbuser = "root";
-// $dbpassword ="";
+// $dbUsername = "root";
+// $dbPassword ="";
 // $dbName = "messageBoard";
 
 $connection = mysqli_connect($servhost, $dbUsername, $dbPassword, $dbName);
