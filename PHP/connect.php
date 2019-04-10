@@ -1,9 +1,9 @@
 <?php
 
 $servhost = getenv("MYSQL_SERVICE_HOST");
-$dbUsername = getenv("root");
-$dbPassword = getenv("");
-$dbName = getenv("messageBoard");
+$dbUsername = getenv("dbuser");
+$dbPassword = getenv("dbpassword");
+$dbName = getenv("dbname");
 
 // $servhost = "localhost";
 // $dbUsername = "root";
