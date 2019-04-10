@@ -4,6 +4,11 @@
     header("Location: index.php?no-login");
     exit();
   }
+
+  if(!isset($_GET['id'])){
+    header("Location: index.php?no-topic-id");
+    exit();
+  }
 ?>
 
 <html>
@@ -19,7 +24,7 @@
   </div>
 
   <div id="container">
-    <form action="PHP/createComment.php" method="post">
+    <form action="PHP/createComment.php?id=<?php echo $_GET['id']; ?>" method="post">
     <div class="container">
       <label for="comment"><b>New Comment</b></label>
       <textarea type="textarea" placeholder="Enter the comment here..." name="inputComment" required></textarea>
